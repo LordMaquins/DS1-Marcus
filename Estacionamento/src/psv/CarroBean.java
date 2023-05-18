@@ -5,7 +5,18 @@ public class CarroBean {
 
     private String placa;
     private String cor;
+    private String chassi;
+    private String marca;
+    private String modelo;
+    private String calota;
+    private String nomeMotorista;
     private String descricao;
+    private String numeroVaga;
+    private String horario;
+    private String estofado;
+    private String tipo;
+    
+   
 
     /**
      * @return the placa
@@ -35,18 +46,85 @@ public class CarroBean {
         this.cor = cor;
     }
 
-    /**
-     * @return the descricao
-     */
-    public String getDescricao() {
+    public String getChassi() {
+        return chassi;
+    }
+
+    public void setChassi(String chassi) {
+        this.chassi = chassi;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public String getCalota() {
+        return calota;
+    }
+
+    public void setCalota(String calota) {
+        this.calota = calota;
+    }
+
+    public String getNomeMotorista() {
+        return nomeMotorista;
+    }
+
+    public void setNomeMotorista(String nomeMotorista) {
+        this.nomeMotorista = nomeMotorista;
+    }
+     public String getDescricao() {
         return descricao;
     }
 
-    /**
-     * @param descricao the descricao to set
-     */
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+}
+
+
+    public String getNumeroVaga() {
+        return numeroVaga;
     }
 
+    public void setNumeroVaga(String numeroVaga) {
+        this.numeroVaga = numeroVaga;
+    }
+
+    public String getHorario() {
+        return horario;
+    }
+
+    public void setHorario(String horario) {
+        this.horario = horario;
+    }
+
+    public String getEstofado() {
+        return estofado;
+    }
+
+    public void setEstofado(String estofado) {
+        this.estofado = estofado;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
 }
+
+   
