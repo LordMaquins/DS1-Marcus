@@ -5,7 +5,7 @@ import java.sql.*;
 import java.util.*;
 import javax.swing.JOptionPane;
 
-public class FrmCarro extends javax.swing.JFrame {
+public class FrmCarro extends javax.swing.JFrame { // Definição da classe FrmCarro que herda de javax.swing.JFrame
 
     public FrmCarro() {
         initComponents();
@@ -376,25 +376,27 @@ public class FrmCarro extends javax.swing.JFrame {
 
 
     private void txtCorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtCorActionPerformed
 
     private void btnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIncluirActionPerformed
-        // TODO add your handling code here:
+        
 
     }//GEN-LAST:event_btnIncluirActionPerformed
 
     private void btnFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFecharActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnFecharActionPerformed
 
     private void btnFecharMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFecharMouseClicked
-        // TODO add your handling code here:
+        // Fecha o sistema
         System.exit(0);
     }//GEN-LAST:event_btnFecharMouseClicked
 
+    //Aqui serão limpos os dados do formulário
     private void btnLimparMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLimparMouseClicked
-        // TODO add your handling code here:
+        
+        
         txtPlaca.setText("");
         txtCor.setText("");
         txtChassi.setText("");
@@ -418,12 +420,15 @@ public class FrmCarro extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLimparMouseClicked
 
     private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
-        // TODO add your handling code here:
+      
 
     }//GEN-LAST:event_btnPesquisarActionPerformed
 
+    /* Para consultar dados salvos no banco */
     private void tblConsultaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblConsultaMouseClicked
 
+        
+        
         Integer linha = tblConsulta.getSelectedRow();
         String placa = (String) tblConsulta.getValueAt(linha, 0);
         String cor = (String) tblConsulta.getValueAt(linha, 1);
@@ -451,6 +456,7 @@ public class FrmCarro extends javax.swing.JFrame {
         txtTipo.setText(tipo);
     }//GEN-LAST:event_tblConsultaMouseClicked
 
+    /* Para alterar registros salvos*/
     private void btnAlterarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAlterarMouseClicked
 
         Connection con = Conexao.abrirConexao();
@@ -458,29 +464,30 @@ public class FrmCarro extends javax.swing.JFrame {
         CarroDAO cd = new CarroDAO(con);
         cb.setPlaca(txtPlaca.getText());
         cb.setCor(txtCor.getText());
-        cb.setDescricao(txtChassi.getText());
-        cb.setDescricao(txtMarca.getText());
-        cb.setDescricao(txtModelo.getText());
-        cb.setDescricao(txtCalota.getText());
-        cb.setDescricao(txtNomeMotorista.getText());
+        cb.setChassi(txtChassi.getText());
+        cb.setMarca(txtMarca.getText());
+        cb.setModelo(txtModelo.getText());
+        cb.setCalota(txtCalota.getText());
+        cb.setNomeMotorista(txtNomeMotorista.getText());
         cb.setDescricao(txtDescricao.getText());
-        cb.setDescricao(txtNumeroVaga.getText());
-        cb.setDescricao(txtHorario.getText());
-        cb.setDescricao(txtEstofado.getText());
-        cb.setDescricao(txtTipo.getText());
+        cb.setNumeroVaga(txtNumeroVaga.getText());
+        cb.setHorario(txtHorario.getText());
+        cb.setEstofado(txtEstofado.getText());
+        cb.setTipo(txtTipo.getText());
         Conexao.FecharConexao(con);
     }//GEN-LAST:event_btnAlterarMouseClicked
 
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
-        // TODO add your handling code here:
+        
 
     }//GEN-LAST:event_btnAlterarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-        // TODO add your handling code here:
+        
 
     }//GEN-LAST:event_btnExcluirActionPerformed
 
+    // Para excluir registros salvos no banco
     private void btnIncluirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIncluirMouseClicked
 
         Connection con = Conexao.abrirConexao();
@@ -488,16 +495,16 @@ public class FrmCarro extends javax.swing.JFrame {
         CarroDAO cd = new CarroDAO(con);
         cb.setPlaca(txtPlaca.getText());
         cb.setCor(txtCor.getText());
-        cb.setDescricao(txtChassi.getText());
-        cb.setDescricao(txtMarca.getText());
-        cb.setDescricao(txtModelo.getText());
-        cb.setDescricao(txtCalota.getText());
-        cb.setDescricao(txtNomeMotorista.getText());
+        cb.setChassi(txtChassi.getText());
+        cb.setMarca(txtMarca.getText());
+        cb.setModelo(txtModelo.getText());
+        cb.setCalota(txtCalota.getText());
+        cb.setNomeMotorista(txtNomeMotorista.getText());
         cb.setDescricao(txtDescricao.getText());
-        cb.setDescricao(txtNumeroVaga.getText());
-        cb.setDescricao(txtHorario.getText());
-        cb.setDescricao(txtEstofado.getText());
-        cb.setDescricao(txtTipo.getText());
+        cb.setNumeroVaga(txtNumeroVaga.getText());
+        cb.setHorario(txtHorario.getText());
+        cb.setEstofado(txtEstofado.getText());
+        cb.setTipo(txtTipo.getText());
         lblMensagem.setText(cd.inserir(cb));
         Conexao.FecharConexao(con);
 
@@ -512,6 +519,8 @@ public class FrmCarro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnExcluirMouseClicked
 
+    
+    // Função para pesquisar registros salvos no banco
     private void btnPesquisarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPesquisarMouseClicked
 
         Connection con = Conexao.abrirConexao();
@@ -546,37 +555,11 @@ public class FrmCarro extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPesquisarMouseClicked
 
     private void txtChassiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtChassiActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtChassiActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
+       
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new FrmCarro().setVisible(true);

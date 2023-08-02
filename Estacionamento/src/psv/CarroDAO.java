@@ -19,6 +19,7 @@ public class CarroDAO {
         this.con = con;
     }
 
+        //Insere os dados do formulário dentro do banco de dados
     public String inserir(CarroBean carro) {
         String sql = "insert into carro (placa,cor, chassi, marca, modelo, calota, nomeMotorista,  descricao, numeroVaga, horario, estofado, tipo)values (?,?,?,?,?,?,?,?,?,?,?,?)";
         try {
@@ -49,6 +50,7 @@ public class CarroDAO {
 
     }
 
+    //Altera os dados e salva no banco de dados
     public String alterar(CarroBean carro) {
         String sql = "update carro set cor =?,chassi=?,marca=?,modelo=?,calota=?,nomeMotorista=?, descricao=?, numeroVaga=?, horario=?,estofado=?,tipo";
         sql += "where placa  =?";
@@ -77,6 +79,7 @@ public class CarroDAO {
         }
     }
 
+        //Deleta registros do banco pelo id
     public String excluir(CarroBean carro) {
         String sql = "delete from carro where placa  =?";
         try {
@@ -92,7 +95,8 @@ public class CarroDAO {
             return e.getMessage();
         }
     }
-
+    
+    //Lista todos os registros do banco
     public List<CarroBean> listarTodos() {
         String sql = "select *from carro";
         List<CarroBean> listaCarro = new ArrayList<CarroBean>();

@@ -5,7 +5,7 @@ import java.sql.*;
 public class Conexao {
     public static Connection abrirConexao(){
         Connection con= null;
-        
+        // Faz a conexão com o banco
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             String url= "";
@@ -26,6 +26,8 @@ public class Conexao {
         }
         return con;
     }
+    
+    //Fecha a conexão com o banco
     public static   void FecharConexao (Connection con ){
         try{
             con.close();
